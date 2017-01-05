@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<script src="js/viewport.js"></script>
+	<title>全屏视频播放</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>	
+	<div class="wrap">
+		<video src="video/1.mp4" webkit-playsinline="" playsinline="" x-webkit-airplay="true" airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint" reload="auto" id="video"></video>
+	</div>
+
+
+	<script type="text/javascript">
+		var vid = document.getElementById('video');
+		vid.play();
+		vid.addEventListener('ended', vidEnd, false);
+		function vidEnd(){
+	        console.log('video end');
+	    }
+	</script>
+</body>
+</html>

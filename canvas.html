@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<script src="js/viewport.js"></script>
+	<title>全屏视频播放</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>	
+	<div class="wrap" id="wrap"></div>
+
+	<script src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/requestAnimationFrame.js"></script>
+	<script type="text/javascript">
+		(function(){
+			var can = document.getElementById('can')||document.createElement('canvas'),
+				ctx = can.getContext('2d'),
+				vid = document.getElementById('vid')||document.createElement('video'),
+				wid = $(window).width(),
+				hei = $(window).height()
+
+				can.id = 'can';				
+				vid.width = wid;
+				vid.height = hei;
+				vid.src = 'video/1.mp4';
+				vid.autoplay = 'autoplay';
+
+
+				document.getElementById('wrap').appendChild(can);
+
+				vid.addEventListener('play', function(){
+					can.width = vid.width;
+					can.height = vid.height;
+					draw(this, ctx, wid, hei);
+				}, false)
+
+				function draw(v, c, w, h){
+					if(v.paused || v.ended)  return false;
+					c.drawImage(v, 0, 0, w, h);
+					//requestAnimationFrame(draw);
+					setTimeout(draw,20,v,c,w,h);
+				}
+			
+		}())
+	</script>
+</body>
+</html>
