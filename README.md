@@ -27,7 +27,7 @@ var u = navigator.userAgent;
 
 
 #### 三、canvas渲染(canvas.html)
-```
+``` js
 var can = document.getElementById('can')||document.createElement('canvas'),
 				ctx = can.getContext('2d'),
 				vid = document.getElementById('vid')||document.createElement('video'),
