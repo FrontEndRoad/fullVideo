@@ -104,3 +104,5 @@ var can = document.getElementById('can')||document.createElement('canvas'),
 
 
 #### 这些坑，你跳过了吗？
+
+##### 敬请期待…
