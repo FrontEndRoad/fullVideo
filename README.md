@@ -56,3 +56,51 @@ var can = document.getElementById('can')||document.createElement('canvas'),
 				}
 ```
 **说明：**安卓下对canvas绘制视频识别不是很好
+
+
+#### VIDEO扩展篇
+
+##### 1、基本属性
+
+- src   路径
+- width/height 宽高
+- poster   封面图
+- preload  预加载
+- autoplay 自动播放
+- loop   循环播放
+- controls 浏览器自带控制条
+- webkit-playsinline="true" | "playsinline"   禁止webkit内核下视频自动全屏
+- x-webkit-ariplay = "true"  支持airplay的设备
+- currentSrc	返回资源地址
+- currentTime	返回当前播放进度，可设置
+- duration	返回资源总时长
+- paused	资源是否已停止
+- ended	资源是否已播完
+
+``` html
+<video id="video" src="mov.mp4" preload="auto" poster="" currenttime=0 webkit-playsinline="true" playsinline loop x-webkit-airplay="true" controls autoplay>
+```
+
+
+##### 2、事件
+
+- canplaythrough   表示资源缓冲完毕，可以播放
+- durationchange	资源长度改变，执行一次
+- play	资源实际开始播放，autoplay和play()都会触发play事件
+- playing	同上 执行一次
+- pause	pause()时触发
+- progress	资源播放过程中多次执行
+- ended	结束时触发 loop时不触发该事件
+
+
+##### 3、方法
+
+- play()	播放资源
+- pause()	暂停资源
+- load()	重新加载src指定的资源
+
+
+
+
+
+#### 这些坑，你跳过了吗？
