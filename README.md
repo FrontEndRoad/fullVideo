@@ -105,4 +105,10 @@ var can = document.getElementById('can')||document.createElement('canvas'),
 
 #### 这些坑，你跳过了吗？
 
-##### 敬请期待…
+#### 1、自动全屏 
+
+**问题：**微信X5浏览器打开时，视频会自动全屏播放，并且结束时会出现腾讯视频的广告
+**方案：**给video标签添加属性 webkit-playsinline="true" playsinline="true" 可解决IOS、部分安卓机的问题
+**说明：**微信团队对视频来源进行了域名限制，挂载在qq域名下可解决以上问题
+**其他方案：**
+- 同层播放器
